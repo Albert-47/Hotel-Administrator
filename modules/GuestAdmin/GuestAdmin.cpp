@@ -22,7 +22,9 @@ void GuestAdmin(){
 	//Se pregunta la accion que se desea realizar
 	
 	cout<<"ADMINISTRADOR DE HUESPEDES\n\n";
-	cout<<"Numero de huespedes: "<<guestNumber()<<endl;
+	cout<<"Numero de huespedes: "<<guestNumber()<<endl<<endl;
+	
+	registerGuest();
 
 }
 
@@ -42,4 +44,44 @@ int guestNumber(){
 	}
 	
 	return numberOfGuests;
+}
+
+//Función que valida un ID (se asegura de que no esté ocupado)
+
+bool validId(int id){
+	
+	bool validation = true;
+	
+	for(int i = 0; i < 100; i++){
+		
+		if(guests[i].getId() == id){
+			validation = false;
+		}
+		
+	}
+	
+	return validation;
+}
+
+//Función para registrar huespedes
+	
+void registerGuest(){
+	
+	cout<<"Por favor introduzca la informacion del huesped acontinuacion\n\n";
+	
+	cout<<"ID (numero comprendido entre el 1 y el 100): ";
+	
+	int id;
+	cin>>id;
+	
+	do{
+		if(validId(id)){
+			return;
+		} else {
+			cout<<"\n\nID invalido, ya se encuentra en uso. Por favor, introduzca otro ID: ";
+			cin>>id;
+		}
+	} while(!validId(id));
+	
+	
 }

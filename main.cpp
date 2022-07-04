@@ -44,7 +44,7 @@ int main() {
 //La informacion del hotel irá luego, no se preocupen.
 
 	
-	cout<<"Gracias por usar Zambarit Suite Administrator. Tenga buen día!";
+	cout<<"Gracias por usar Zambarit Suite Administrator. Tenga buen dia!\n\n";
 	
 	system("pause");
 	
