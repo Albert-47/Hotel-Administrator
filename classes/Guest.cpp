@@ -4,7 +4,7 @@ Guest::Guest(int id,
 			string name, 
 			string lastName, 
 			string email, 
-			int phone, 
+			double phone, 
 			string payStatus, 
 			int room, 
 			string roomType, 
@@ -57,11 +57,11 @@ void Guest::setEmail(string email){
 	this->email = email;
 }
 
-Guest::getPhone(){
+double Guest::getPhone(){
 	return this->phone;
 }
 
-void Guest::setPhone(int phone){
+void Guest::setPhone(double phone){
 	this->phone = phone;
 }
 

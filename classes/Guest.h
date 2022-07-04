@@ -9,7 +9,7 @@ class Guest
 		string name;
 		string lastName;  //apellido
 		string email;
-		int phone; //numero de celular del huesped
+		double phone; //numero de celular del huesped
 		string direction; //Direccion del huesped
 		string payStatus; // esta propiedad debe llenarse solo con 'si' o 'no', porque refleja si el huesped pagó o no
 		int room;  //numero de la habitacion en que se encuentra el huesped
@@ -23,7 +23,7 @@ class Guest
 			string name = "", 
 			string lastName = "", 
 			string email = "", 
-			int phone = 0, 
+			double phone = 0, 
 			string payStatus = "no", 
 			int room = 0, 
 			string roomType = "Cama individual", 
@@ -44,8 +44,8 @@ class Guest
 		string getEmail();
 		void setEmail(string email);
 		
-		int getPhone();
-		void setPhone(int phone);
+		double getPhone();
+		void setPhone(double phone);
 		
 		string getDirection();
 		void setDirection(string direction);
