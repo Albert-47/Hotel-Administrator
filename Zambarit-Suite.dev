@@ -140,3 +140,13 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
+[Unit10]
+FileName=modules\RoomState\Pruebita.cpp
+CompileCpp=1
+Folder=modules/RoomState
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
