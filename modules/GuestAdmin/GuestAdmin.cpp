@@ -4,6 +4,10 @@
 #include <string>
 using namespace std;
 
+//Variable que determina la acción a realizar en este módulo
+
+int action;
+
 	//Se crea el array de huespedes
 
 Guest guests[100];
@@ -22,16 +26,46 @@ void GuestAdmin(){
 	
 	//Se pregunta la accion que se desea realizar
 	
-	cout<<"ADMINISTRADOR DE HUESPEDES\n\n";
+	cout<<"*********************************";
+	cout<<"\nADMINISTRADOR DE HUESPEDES\n";
+	cout<<"*********************************\n\n";
 	cout<<"Numero de huespedes: "<<guestNumber()<<endl<<endl;
+	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
+	cin>>action;
 	
-	registerGuest();
+	
+	while(action != 4){
+		
+		switch(action){
+			case 1:
+				registerGuest();
+				break;
+			
+			case 2:
+				deleteGuest();
+				break;
+				
+			case 3:
+				viewGuest();
+				break;
+				
+			case 4:
+				return;
+				break;
+				
+			default:
+				cout<<"Opcion invalida. Por favor introduzca una opcion valida: ";
+				cin>>action;
+		}
+		
+	}
+	
 
 }
 
 /////////////////Definición de funciones//////////////////////////////////
 
-//Funcion para calcular el numero de huespedes
+///////////Funcion para calcular el numero de huespedes
 
 int guestNumber(){
 	
@@ -47,7 +81,7 @@ int guestNumber(){
 	return numberOfGuests;
 }
 
-//Función que valida un ID (se asegura de que no esté ocupado)
+///////////Función que valida un ID (se asegura de que no esté ocupado)
 
 bool validId(int id){
 	
@@ -66,7 +100,7 @@ bool validId(int id){
 	return true;
 }
 
-//Función para registrar huespedes
+///////////Función para registrar huespedes
 	
 void registerGuest(){
 	
@@ -169,7 +203,23 @@ void registerGuest(){
 	guests[id].setFood(food);
 	guests[id].setStayTime(stayTime);
 	
-	cout<<"\n\nHuesped registrado con exito!\n\n";
-	cout<<guests[id].getName()<<endl<<guests[id].getPhone()<<endl;
+	cout<<"\n\nHuesped con ID "<<id<<" registrado con exito!\n\n";
 	
+	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
+	cin>>action;
+	
+}
+
+///////////Función para eliminar huesped
+
+void deleteGuest(){
+	cout<<"Delete Guest function";
+	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
+	cin>>action;
+}
+
+void viewGuest(){
+	cout<<"View Guest function";
+	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
+	cin>>action;
 }
