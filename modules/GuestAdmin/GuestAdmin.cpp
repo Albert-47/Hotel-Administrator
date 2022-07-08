@@ -22,6 +22,7 @@ void GuestAdmin(){
 	guests[1] = test2; 
 	guests[1].setId(25);
 	guests[1].setName("Albert");
+	guests[1].setLastName("Quevedo");
 	
 	
 	//Se pregunta la accion que se desea realizar
@@ -218,8 +219,36 @@ void deleteGuest(){
 	cin>>action;
 }
 
+
+/////////Función que busca un huesped dado el nomobre o apellido
+
+Guest searchGuest(string data){
+	
+	Guest blank;
+	
+	for(int i = 0; i < 100; i++){
+		if(to_string(guests[i].getId()) == data || guests[i].getName() == data || guests[i].getLastName() == data){
+			return guests[i];
+		}
+	}
+	
+	cout<<"No se encontro un huesped con la informacion suministrada\n\n";
+	return blank;
+}
+
+///////////Función para ver información de un huesped
+
 void viewGuest(){
-	cout<<"View Guest function";
+	cout<<"Por favor introduzca el nombre, apellido o ID del huesped que desea ver: ";
+	string data;
+	cin>>data;
+	
+	Guest result = searchGuest(data);
+	
+	if(result.getName() != ""){
+		cout<<"Resultado:\n\n"<<result.getName()<<endl<<result.getLastName();
+	}
+	
 	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
 	cin>>action;
 }
