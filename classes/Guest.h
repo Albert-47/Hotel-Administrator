@@ -64,6 +64,10 @@ class Guest
 		
 		int getStayTime();
 		void setStayTime(int stayTime);
+		
+		//Impresión de todos los datos
+		
+		void fullData();
 };
 
 #endif

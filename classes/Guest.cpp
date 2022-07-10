@@ -1,5 +1,7 @@
 #include "Guest.h"
+#include <iostream>
 using namespace std;
+
 Guest::Guest(int id, 
 			string name, 
 			string lastName, 
@@ -111,5 +113,22 @@ Guest::getStayTime(){
 
 void Guest::setStayTime(int stayTime){
 	this->stayTime = stayTime;
+}
+
+//Función que muestra todos los datos
+
+void Guest::fullData(){
+	
+	cout<<"Nombre: "<<this->name<<endl<<
+	"Apellido: "<<this->lastName<<endl<<
+	"ID: "<<this->id<<endl<<
+	"Email: "<<this->email<<endl<<
+	"Celular: "<<this->phone<<endl<<
+	"Direccion: "<<this->direction<<endl<<
+	"Pago?: "<<this->payStatus<<endl<<
+	"Habitacion: "<<this->room<<endl<<
+	"Tipo de habitacion: "<<this->roomType<<endl<<
+	"Incluye comida?: "<<this->food<<endl<<
+	"Dias de estadia: "<<this->stayTime<<endl;
 }
 

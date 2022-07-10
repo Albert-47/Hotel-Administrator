@@ -220,7 +220,7 @@ void deleteGuest(){
 }
 
 
-/////////Función que busca un huesped dado el nomobre o apellido
+/////////Función que busca un huesped dado el nombre o apellido
 
 Guest searchGuest(string data){
 	
@@ -246,9 +246,10 @@ void viewGuest(){
 	Guest result = searchGuest(data);
 	
 	if(result.getName() != ""){
-		cout<<"Resultado:\n\n"<<result.getName()<<endl<<result.getLastName();
+		cout<<"Resultado:\n\n";
+		result.fullData();
 	}
 	
-	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
+	cout<<"\n\nRegistrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
 	cin>>action;
 }
