@@ -211,13 +211,6 @@ void registerGuest(){
 	
 }
 
-///////////Función para eliminar huesped
-
-void deleteGuest(){
-	cout<<"Delete Guest function";
-	cout<<"Registrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
-	cin>>action;
-}
 
 
 /////////Función que busca un huesped dado el nombre o apellido
@@ -236,6 +229,43 @@ Guest searchGuest(string data){
 	return blank;
 }
 
+
+/////////Función que busca un huesped dado el nombre o apellido Y LO ELIMINA
+
+void searchDeleteGuest(string data){
+	
+	
+	for(int i = 0; i < 100; i++){
+		if(to_string(guests[i].getId()) == data || guests[i].getName() == data || guests[i].getLastName() == data){
+			
+			guests[i].fullData();
+			
+			cout<<"\nSeguro que desea eliminar este huesped?  Si (1)     No (2) ";
+			int confirmation;
+			cin>>confirmation;
+			
+			if(confirmation == 1){
+				guests[i].setName("");
+				guests[i].setLastName("");
+				guests[i].setPhone(0);
+				guests[i].setEmail("");
+				guests[i].setDirection("");
+				guests[i].setPayStatus("");
+				guests[i].setRoom(0);
+				guests[i].setFood("no");
+				guests[i].setRoomType("");
+				guests[i].setStayTime(0);
+				
+				cout<<"Huesped eliminado con exito!";
+			} else {
+				cout<<"Operacion abortada";
+			}
+		
+		} 
+	}
+	
+}
+
 ///////////Función para ver información de un huesped
 
 void viewGuest(){
@@ -249,6 +279,21 @@ void viewGuest(){
 		cout<<"Resultado:\n\n";
 		result.fullData();
 	}
+	
+	cout<<"\n\nRegistrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
+	cin>>action;
+}
+
+
+//////////Función para eliminar huesped
+
+void deleteGuest(){
+	cout<<"Por favor introduzca el nombre, apellido o ID del huesped que desea eliminar: ";
+	string data;
+	cin>>data;
+	
+	searchDeleteGuest(data);
+	
 	
 	cout<<"\n\nRegistrar huesped (1)      Eliminar huesped (2)    Ver informacion de huesped (3)  Volver al menu anterior (4)\n\n";
 	cin>>action;

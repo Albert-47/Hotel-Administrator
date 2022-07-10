@@ -8,3 +8,5 @@ bool validId(int id);
 void deleteGuest();
 void viewGuest();
 Guest searchGuest(string name);
+void deleteGuest();
+void searchDeleteGuest(string data);
