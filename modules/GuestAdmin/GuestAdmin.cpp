@@ -8,9 +8,7 @@ using namespace std;
 
 int action;
 
-	//Se crea el array de huespedes
 
-Guest guests[100];
 
 ///////////////////////////Cuerpo principal del módulo///////////////////
 
